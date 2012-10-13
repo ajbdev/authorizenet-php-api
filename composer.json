@@ -1,0 +1,15 @@
+{
+    "name": "ajbdev/AuthorizeNET-PHP-API",
+    "description": "Authorize.NET PHP library with composer support",
+    "keywords": ["authorize.net","ecommerce","payment"],
+    "type": "library",
+    "require":{
+        "php": ">=5.2.0"
+    },
+    "autoload":{
+        "classmap": [
+            "lib/",
+            "AuthorizeNet.php"
+        ]
+    }
+}
