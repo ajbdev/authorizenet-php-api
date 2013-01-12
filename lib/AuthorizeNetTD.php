@@ -33,8 +33,8 @@ class AuthorizeNetTD extends AuthorizeNetRequest
      * unless the Z is specified in the first and last settlement date
      *
      * @param bool   $includeStatistics
-     * @param string $firstSettlementDate //  yyyy-mmddTHH:MM:SS
-     * @param string $lastSettlementDate  //  yyyy-mmddTHH:MM:SS
+     * @param string $firstSettlementDate //  yyyy-mm-ddTHH:MM:SS
+     * @param string $lastSettlementDate  //  yyyy-mm-ddTHH:MM:SS
      * @param bool   $utc                 //  Use UTC instead of merchant time zone setting
      *
      * @return AuthorizeNetTD_Response
