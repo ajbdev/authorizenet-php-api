@@ -46,6 +46,18 @@ abstract class AuthorizeNetRequest
     }
     
     /**
+     *  Set credentials
+     * 
+     *  @param $api_login_id string
+     *  @param $transaction_key string
+     **/
+    public function setCredentials($api_login_id, $transaction_key)
+    {
+        $this->_api_login = $api_login_id;
+        $this->_transaction_key = $transaction_key;
+    }
+    
+    /**
      * Alter the gateway url.
      *
      * @param bool $bool Use the Sandbox.
