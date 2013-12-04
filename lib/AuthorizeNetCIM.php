@@ -362,8 +362,10 @@ class AuthorizeNetCIM extends AuthorizeNetRequest
      */
     private function _constructXml($request_type)
     {
-        $string = '<?xml version="1.0" encoding="utf-8"?><'.$request_type.' xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"></'.$request_type.'>';
+        $string = '<?xml version="1.0" encoding="utf-8"?><'.$request_type.'></'.$request_type.'>';
         $this->_xml = @new SimpleXMLElement($string);
+        $this->_xml->addAttribute('xmlns', 'AnetApi/xml/v1/schema/AnetApiSchema.xsd');        
+
         $merchant = $this->_xml->addChild('merchantAuthentication');
         $merchant->addChild('name',$this->_api_login);
         $merchant->addChild('transactionKey',$this->_transaction_key);
