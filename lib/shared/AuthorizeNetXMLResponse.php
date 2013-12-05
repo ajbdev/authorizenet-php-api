@@ -26,7 +26,7 @@ class AuthorizeNetXMLResponse
     {
         $this->response = $response;
         if ($response) {
-            $this->xml = @simplexml_load_string($response);
+            $this->xml = @simplexml_load_string($this->removeResponseXMLNS($response));
             
             // Remove namespaces for use with XPath.
             $this->xpath_xml = @simplexml_load_string(preg_replace('/ xmlns:xsi[^>]+/','',$response));
@@ -123,6 +123,15 @@ class AuthorizeNetXMLResponse
             $end_position = strpos($this->response, $end);
             return substr($this->response, $start_position, $end_position-$start_position);
         }
+    }
+
+    /* @refer http://community.developer.authorize.net/t5/Integration-and-Testing/ARB-with-SimpleXML-PHP-Issue/m-p/7128#M5139*/
+    private function removeResponseXMLNS($input)
+    {
+         // Remove XML response namespaces one by one
+         $input = str_replace(' xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"','',$input);
+         $input = str_replace(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"','',$input);
+         return str_replace(' xmlns:xsd="http://www.w3.org/2001/XMLSchema"','',$input);
     }
 
 }
