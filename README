@@ -1,6 +1,7 @@
-NOTICE: This is a pretty vanilla port of the official authorize.net SDK. 
-For a better 5.3 compatible version, I would strongly recommend https://github.com/cystbear/AuthorizeNet-PHP-SDK instead.
-This package is not actively maintained, but pull requests for bug fixes will be merged.
+***THIS REPO IS DEPRECATED***
+Please use the official authorize.net PHP instead: https://github.com/AuthorizeNet/sdk-php
+This repo only existed to provide a packagist version of the old (pre-5.3) authorize.net SDK
+
 
 By:
     Authorize.Net
